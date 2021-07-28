@@ -6,21 +6,45 @@ import Img2 from '../assets/2.jpg';
 import Img3 from '../assets/3.jpg';
 import Img4 from '../assets/4.jpg';
 import Img5 from '../assets/5.jpg';
+import axios from 'axios';
+const ULR = 'https://luci-marketing-test-app.herokuapp.com/';
+// const ULR = 'http://localhost:3001/'
 
 function SubscriptionModal(props) {
 	const [state, setState] = React.useState({
-		fullname: '',
+		firstname: '',
+		lastname: '',
 		email: '',
 	});
 
+	const [success, setSuccess] = React.useState('');
+	const [error, setError] = React.useState('');
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setState({
-			[name]: value,
+		setState((prevState) => {
+			return { ...prevState, [name]: value };
 		});
 	};
 
-	const subscribeNow = async () => {};
+	const subscribeNow = async () => {
+		if (state.firstname === '' || state.lastname === '' || state.email === '') {
+			return;
+		}
+		try {
+			const subscriptionResult = await axios.post(URL + 'api/subscribe', { ...state });
+			if (subscriptionResult.status === 200) {
+				console.log(subscriptionResult);
+				setSuccess(subscriptionResult.data.message);
+			}
+		} catch (err) {
+			console.log(err);
+			if (err.response && err.response.data) {
+				setError(err.response.data.error);
+			} else {
+				setError(err.message);
+			}
+		}
+	};
 	return (
 		<Modal {...props} size='sm' aria-labelledby='subscriptionModal' centered>
 			<Modal.Header closeButton>
@@ -28,15 +52,19 @@ function SubscriptionModal(props) {
 			</Modal.Header>
 			<Modal.Body>
 				<h4>Fill the Form</h4>
+				{success && <p style={{ color: 'green', fontWeight: 'bold' }}>{success}</p>}
+				{error && <p style={{ fontWeight: 'bold', color: 'red' }}>{error}</p>}
 				<Form>
-					<Form.Label>Full name</Form.Label>
-					<Form.Control type='text' name='fullname' onChange={handleChange} placeholder='Enter Fullname' />
+					<Form.Label>Firstname</Form.Label>
+					<Form.Control name='firstname' value={state.firstname} onChange={handleChange} placeholder='Enter Firstname' />
+					<Form.Label>Lastname</Form.Label>
+					<Form.Control name='lastname' value={state.lastname} onChange={handleChange} placeholder='Enter Lastname' />
 					<Form.Label>Email</Form.Label>
-					<Form.Control type='email' name='email' onChange={handleChange} placeholder='Enter email' />
+					<Form.Control type='email' name='email' value={state.email} onChange={handleChange} placeholder='Enter email' />
 				</Form>
 			</Modal.Body>
 			<Modal.Footer>
-				<Button className={classes.customBtn} disabled={state.fullname === '' || state.email === ''} onClick={subscribeNow}>
+				<Button className={classes.customBtn} disabled={state.firstname === '' || state.lastname === '' || state.email === ''} onClick={subscribeNow}>
 					Subscribe Now
 				</Button>
 				<Button className={classes.customBtn} onClick={props.onHide}>
