@@ -7,6 +7,7 @@
 .imgContainer {
 	width: 100%;
 	height: 70vh;
+	margin: 1rem 0;
 	background-image: url(../assets/bg.jpg);
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -68,6 +69,9 @@
 	padding: 1rem;
 	border-radius: 1rem;
 	text-align: center;
+}
+.callToAction h1 {
+	margin: 2rem;
 }
 .Row {
 	margin: 3rem 0;
