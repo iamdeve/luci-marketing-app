@@ -9,3 +9,16 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+@media only screen and (max-width: 787px) {
+	.landing-body > div:nth-child(odd) {
+		flex-flow: column-reverse;
+	}
+	.navbar-toggler {
+		margin: 1rem;
+	}
+
+	.about-container > div:nth-child(even) > div {
+		flex-flow: column-reverse;
+	}
+}

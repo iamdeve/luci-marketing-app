@@ -29,12 +29,12 @@ function Team() {
 				{teams.map((team, id) => (
 					<div key={id} className={classes.teamContainer}>
 						<Row>
-							<Col lg={4} sm={4} xs={4}>
+							<Col lg={4} sm={4} xs={12}>
 								<div className={classes.teamProfile}>
 									<img src={team.img} alt={team.name} />
 								</div>
 							</Col>
-							<Col lg={8} sm={8} xs={8}>
+							<Col lg={8} sm={8} xs={12}>
 								<div className={classes.description}>
 									<h4>{team.name}</h4>
 									<p>{team.bio}</p>

@@ -33,17 +33,17 @@ function About() {
 	}, []);
 	return (
 		<Container>
-			<div className={classes.aboutBoxContainer}>
+			<div className={[classes.aboutBoxContainer, 'about-container'].join(' ')}>
 				{aboutData.map((about, id) => (
-					<div key={id} className={classes.aboutContainer}>
+					<div key={id} className={[classes.aboutContainer].join(' ')}>
 						{about.right ? (
 							<Row>
-								<Col>
+								<Col lg={6} sm={6} xs={12}>
 									<div className={classes.aboutImage}>
 										<img src={about.image} alt={`about-${id}`} />
 									</div>
 								</Col>
-								<Col>
+								<Col lg={6} sm={6} xs={12}>
 									<div className={classes.details}>
 										<p>{about.details}</p>
 									</div>
@@ -51,12 +51,12 @@ function About() {
 							</Row>
 						) : about.image ? (
 							<Row>
-								<Col>
+								<Col lg={6} sm={6} xs={12}>
 									<div className={classes.details}>
 										<p>{about.details}</p>
 									</div>
 								</Col>
-								<Col>
+								<Col lg={6} sm={6} xs={12}>
 									<div className={classes.aboutImage}>
 										<img src={about.image} alt={`about-${id}`} />
 									</div>
@@ -64,7 +64,7 @@ function About() {
 							</Row>
 						) : (
 							<Row>
-								<Col>
+								<Col lg={12} sm={12} xs={12}>
 									<div className={classes.details}>
 										<p>{about.details}</p>
 									</div>

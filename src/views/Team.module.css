@@ -26,3 +26,9 @@
 .description h4 {
 	color: #4b176a;
 }
+
+@media only screen and (max-width: 787px) {
+	.description {
+		margin: 1rem;
+	}
+}
