@@ -1,0 +1,28 @@
+.NavbarContainer > nav {
+	background: #fff;
+}
+
+.link,
+.logo {
+	color: #4b176a;
+	text-decoration: none;
+	padding: 0.2rem 1rem;
+}
+
+.logo {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.link > h4 {
+	font-weight: 600;
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+}
+.link:hover {
+	box-shadow: 2px 2px 5px #4b176a;
+	color: #4b176a;
+	border-radius: 10px;
+	transition-timing-function: ease;
+}

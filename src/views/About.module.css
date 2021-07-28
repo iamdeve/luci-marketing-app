@@ -1,0 +1,17 @@
+.aboutBoxContainer {
+	margin: 1rem 0;
+}
+.aboutContainer {
+	margin: 1rem 0;
+}
+.aboutImage img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.details {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
