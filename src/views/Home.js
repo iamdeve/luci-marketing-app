@@ -7,8 +7,8 @@ import Img3 from '../assets/3.jpg';
 import Img4 from '../assets/4.jpg';
 import Img5 from '../assets/5.jpg';
 import axios from 'axios';
-const ULR = 'https://luci-marketing-test-app.herokuapp.com/';
-// const ULR = 'http://localhost:3001/'
+const URL = 'https://luci-marketing-test-app.herokuapp.com/';
+// const URL = 'http://localhost:3001/'
 
 function SubscriptionModal(props) {
 	const [state, setState] = React.useState({
@@ -35,6 +35,12 @@ function SubscriptionModal(props) {
 			if (subscriptionResult.status === 200) {
 				console.log(subscriptionResult);
 				setSuccess(subscriptionResult.data.message);
+				setState({
+					firstname: '',
+					lastname: '',
+					email: '',
+				});
+				setError('');
 			}
 		} catch (err) {
 			console.log(err);
@@ -45,6 +51,10 @@ function SubscriptionModal(props) {
 			}
 		}
 	};
+	React.useEffect(() => {
+		setError('');
+		setSuccess('');
+	}, []);
 	return (
 		<Modal {...props} size='sm' aria-labelledby='subscriptionModal' centered>
 			<Modal.Header closeButton>
