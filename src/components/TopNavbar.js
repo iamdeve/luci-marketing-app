@@ -15,14 +15,14 @@ function TopNavbar() {
 				<Navbar.Toggle aria-controls='responsive-navbar-nav' />
 				<Navbar.Collapse id='responsive-navbar-nav'>
 					<Nav className='me-auto'></Nav>
-					<Nav>
+					{/* <Nav>
 						<Link className={classes.link} to='/team'>
 							<h4>Team</h4>
 						</Link>
 						<Link className={classes.link} to='/about'>
 							<h4>About</h4>
 						</Link>
-					</Nav>
+					</Nav> */}
 				</Navbar.Collapse>
 			</Navbar>
 		</div>

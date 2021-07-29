@@ -13,7 +13,9 @@
 	font-weight: bold;
 	font-size: 24px;
 }
-
+.logo img {
+	width: 60px;
+}
 .link > h4 {
 	font-weight: 600;
 	font-size: 18px;
