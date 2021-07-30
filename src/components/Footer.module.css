@@ -3,6 +3,7 @@
 	justify-content: space-around;
 	align-items: center;
 	padding: 1rem;
+	border-top:'1px solid #ddd'
 }
 .copyright {
 	font-size: 14px;
