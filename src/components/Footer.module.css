@@ -1,8 +1,22 @@
 .footer {
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
 	padding: 1rem;
 }
 .copyright {
 	font-size: 14px;
+}
+
+@media only screen and (max-width: 787px) {
+	.footer {
+		flex-direction: column;
+	}
+	.copyright {
+		text-align: center;
+	}
+	.icons {
+		margin: 1rem 0;
+		text-align: center;
+	}
 }
