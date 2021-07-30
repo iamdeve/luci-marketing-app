@@ -4,6 +4,7 @@ import TopNavbar from './components/TopNavbar';
 import Home from './views/Home';
 import Team from './views/Team';
 import About from './views/About';
+import Footer from './components/Footer';
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<Route path='/about' exact component={About} />
 				<Route path='/team' exact component={Team} />
 			</Switch>
+			<Footer />
 		</div>
 	);
 }
