@@ -85,13 +85,14 @@
 	font-size: 130px;
 	line-height: 152px;
 	color: #4b176a;
+	margin: 0;
 }
 
 .newHomeText {
 	font-family: 'Arial';
 	font-style: normal;
 	font-weight: 300;
-	font-size: 18px;
+	font-size: 22px;
 	color: #4b176a;
 }
 @media only screen and (max-width: 787px) {
