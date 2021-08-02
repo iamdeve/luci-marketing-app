@@ -89,7 +89,10 @@ function Home() {
 	const [modalShow, setModalShow] = React.useState(false);
 	return (
 		<>
-			<div className={classes.imgContainer}></div>
+			<div className={classes.imgContainer}>
+				<p className={classes.newHomeLuci}> Luci </p>
+				<p className={classes.newHomeText}>An interactive real estate investing asssistant</p>
+			</div>
 			<Container>
 				<div className={[classes.homeContainer, 'home-container'].join(' ')}>
 					<div className={classes.subscriptionButtonContainer}>
