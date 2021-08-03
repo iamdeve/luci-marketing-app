@@ -91,14 +91,12 @@ function Home() {
 		<>
 			<div className={classes.imgContainer}>
 				<p className={classes.newHomeLuci}> Luci </p>
-				<p className={classes.newHomeText}>An interactive real estate investing asssistant</p>
+				<p className={classes.newHomeText}>An interactive real estate investing engine</p>
 			</div>
 			<Container>
 				<div className={[classes.homeContainer, 'home-container'].join(' ')}>
 					<div className={classes.subscriptionButtonContainer}>
-						<Button className={classes.joinNow} onClick={() => setModalShow(true)}>
-							Join Now
-						</Button>
+						<Button className={classes.joinNow}>Join Now</Button>
 					</div>
 					<div className={[classes.landingBody].join(' ')}>
 						<div className={classes.items}>
@@ -207,7 +205,9 @@ function Home() {
 								Don’t miss your chance to be among the first investors to utilize Luci Tech’s incredible competitive advantages. Enter your email below to sign up for the latest information about Luci Tech’s product launch and be the first to leverage the industry’s best-kept secret.{' '}
 							</p>
 							<div className={classes.callToAction}>
-								<Button className={classes.signUPNow}>Signup Now</Button>
+								<Button className={classes.signUPNow} onClick={() => setModalShow(true)}>
+									Join Now
+								</Button>
 							</div>
 						</div>
 					</div>
